@@ -14,11 +14,11 @@ caproverOneClickApp:
         - id: $$wispher_model
           label: Wispher Model
           defaultValue: base
-          validRegex: '^[a-zA-Z]+$'
+          validRegex: /^[a-zA-Z]+$/
         - id: $$admin_password
           label: Admin Password
           description: Enter the admin password. Please use a string one.
-          validRegex: '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+          validRegex: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
           required: true
     instructions:
         start: |

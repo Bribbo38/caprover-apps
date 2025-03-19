@@ -54,5 +54,5 @@ caproverOneClickApp:
             Thank you for using the Audio Transcribe and Comment application!
     displayName: Audio Transcribe
     isOfficial: false
-    description: phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web
+    description: An application where you can upload audio files, preferably dialogues, that will then be transformed as text by the system
     documentation: More documentation can be found on the [GitHub](https://github.com/geo-petrini/audio_transcribe)

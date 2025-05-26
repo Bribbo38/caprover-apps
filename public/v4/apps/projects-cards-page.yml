@@ -1,0 +1,68 @@
+captainVersion: 4
+services:
+    $$cap_appname:
+        image: bribbo38/project-cards-portfolio:latest
+        environment:
+            - PAGE_TITLE=$$page_title
+            - PAGE_HEADING=$$page_heading
+            - LINKS_JSON=$$links_json
+
+caproverOneClickApp:
+    variables:
+        - id: $$page_title
+          label: Page Title
+          description: The title that will appear in the browser tab.
+          defaultValue: My Project Portfolio
+          validRegex: /^.*$/
+        - id: $$page_heading
+          label: Page Heading
+          description: The main heading shown at the top of the page.
+          defaultValue: “Welcome to My Portfolio”
+          validRegex: /^.*$/
+        - id: $$links_json
+          label: Links JSON
+          description: |
+              A JSON array of items, each with `name`, `url`, and optional `image`.  
+              Format:
+              ```
+              [
+                {
+                  "name": "Project One",
+                  "url": "https://example.com",
+                  "image": "https://…/thumb1.png"
+                },
+                {
+                  "name": "Project Two",
+                  "url": "https://…",
+                  "image": ""
+                }
+              ]
+              ```
+              If `image` is empty, a default placeholder will be used.
+          defaultValue: '[]'
+          validRegex: /^\[.*\]$/
+    instructions:
+        start: |
+            Welcome to the **Project Cards Portfolio** setup!
+
+            This app will render a static page displaying a list of projects as cards.  
+            Each card shows a name, link, and optional image (a blank placeholder is used if you leave the image URL empty).
+
+            Please provide the following:
+            - **Page Title**: text for the browser tab.
+            - **Page Heading**: main heading displayed on the page.
+            - **Links JSON**: an array of project objects in the format described above.
+
+            Once you click **Deploy**, your portfolio page will be up and running.
+        end: |
+            🎉 Your **Project Cards Portfolio** has been deployed!
+
+            View it here: `http://$$cap_appname.$$cap_root_domain`
+
+            To update the content, re-open this One-Click setup and adjust your **Links JSON** or headings.
+            Or you can edit the environment variables directly in the app settings.
+
+    displayName: Project Cards Portfolio
+    isOfficial: false
+    description: A static page displaying a customizable list of project links with images.
+    documentation: For more details, visit the [Bribbo OneClick Repository](https://github.com/Bribbo38/caprover-apps)
